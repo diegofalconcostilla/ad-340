@@ -36,28 +36,28 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email" />
 
-    <EditText
-        android:id="@+id/dateOfBirth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_id"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username" />
-
     <Button
-        android:id="@+id/submitButton"
+        android:id="@+id/date_picker_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/select_your_birthdate"
         android:onClick="datePicker"
-        app:layout_constraintBottom_toTopOf="@id/button_id"
+        app:layout_constraintBottom_toTopOf="@id/dateOfBirth"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dateOfBirth" />
+        app:layout_constraintTop_toBottomOf="@id/username" />
+
+    <TextView
+        android:id="@+id/dateOfBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/submitButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_picker_button" />
 
     <Button
-        android:id="@+id/button_id"
+        android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onSubmit"
@@ -75,7 +75,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/button_id"
+        app:layout_constraintTop_toBottomOf="@id/submitButton"
         />
 
 

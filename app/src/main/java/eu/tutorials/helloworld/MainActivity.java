@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.SyncStateContract;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -78,20 +79,31 @@ public class MainActivity extends AppCompatActivity implements
         String temporalEmail = email.getText().toString();
         String temporalUsername = username.getText().toString();
 
+
+
+        if(temporalEmail.equals("") || temporalUsername.equals("") || temporalName.equals("")){
+            Toast.makeText(getApplicationContext(), getString(R.string.inputError), Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(temporalEmail).matches()){
+            Toast.makeText(getApplicationContext(), getString(R.string.validEmail), Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(year == 0 || month == 0 || day == 0){
+            Toast.makeText(getApplicationContext(), getString(R.string.noBirthdate), Toast.LENGTH_LONG).show();
+            return;
+        }
+
         LocalDate todayDate = LocalDate.now();
         LocalDate birthDate = LocalDate.of(year, month, day);
         int age = Period.between(birthDate, todayDate).getYears();
 
         if(age < 18){
-            Toast.makeText(getApplicationContext(), getString(R.string.error), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.ageError), Toast.LENGTH_LONG).show();
             return;
         }
-
-        if(temporalEmail.equals("") || temporalUsername.equals("") || temporalName.equals("")){
-            Toast.makeText(getApplicationContext(), getString(R.string.error), Toast.LENGTH_LONG).show();
-            return;
-        }
-
         Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
         intent.putExtra(usernameKey, temporalUsername);
         startActivity(intent);
@@ -104,11 +116,23 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+    public void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         if (savedInstanceState.containsKey(datePicked)) {
             pickerView.setText(savedInstanceState.getString(datePicked));
         }
+    }
+
+    @Override
+    public void onRestart(){
+        super.onRestart();
+        name.setText("");
+        email.setText("");
+        year = 0;
+        month = 0;
+        day = 0;
+        username.setText("");
+        pickerView.setText("");
     }
 
 }
