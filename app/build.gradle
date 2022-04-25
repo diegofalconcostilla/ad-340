@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "eu.tutorials.helloworld"
+        applicationId "com.tutorials.helloworld"
         minSdk 31
         targetSdk 31
         versionCode 1
