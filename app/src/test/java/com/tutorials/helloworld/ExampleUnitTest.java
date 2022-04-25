@@ -1,4 +1,4 @@
-package eu.tutorials.helloworld;
+package com.tutorials.helloworld;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package eu.tutorials.helloworld;
+package com.tutorials.helloworld;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +8,6 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.provider.SyncStateContract;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.DatePicker;

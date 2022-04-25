@@ -1,4 +1,4 @@
-package eu.tutorials.helloworld;
+package com.tutorials.helloworld;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
