@@ -29,8 +29,13 @@ public class MainActivity extends AppCompatActivity implements
     private int day = 0;
     private EditText username;
     private TextView pickerView;
-    public static final String usernameKey = "username";
+    private EditText occupation;
+    private EditText description;
     public static final String datePicked = "selectedBirthday";
+    public static final String ageKey = "age";
+    public static final String nameKey = "name";
+    public static final String occupationKey = "occupation";
+    public static final String descriptionKey = "description";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements
         name = findViewById(R.id.names);
         email = findViewById(R.id.email);
         username = findViewById(R.id.username);
+        occupation = findViewById(R.id.occupation);
+        description = findViewById(R.id.description);
         pickerView = findViewById(R.id.dateOfBirth);
     }
 
@@ -76,10 +83,12 @@ public class MainActivity extends AppCompatActivity implements
         String temporalName = name.getText().toString();
         String temporalEmail = email.getText().toString();
         String temporalUsername = username.getText().toString();
+        String temporalOccupation = occupation.getText().toString();
+        String temporalDescription = description.getText().toString();
 
 
-
-        if(temporalEmail.equals("") || temporalUsername.equals("") || temporalName.equals("")){
+        if(temporalEmail.equals("") || temporalUsername.equals("") || temporalName.equals("")
+                || temporalOccupation.equals("") || temporalDescription.equals("")){
             Toast.makeText(getApplicationContext(), getString(R.string.inputError), Toast.LENGTH_LONG).show();
             return;
         }
@@ -103,7 +112,10 @@ public class MainActivity extends AppCompatActivity implements
             return;
         }
         Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
-        intent.putExtra(usernameKey, temporalUsername);
+        intent.putExtra(nameKey, temporalName);
+        intent.putExtra(descriptionKey, temporalDescription);
+        intent.putExtra(occupationKey, temporalOccupation);
+        intent.putExtra(ageKey, age);
         startActivity(intent);
     }
 
@@ -131,6 +143,8 @@ public class MainActivity extends AppCompatActivity implements
         day = 0;
         username.setText("");
         pickerView.setText("");
+        occupation.setText("");
+        description.setText("");
     }
 
 }

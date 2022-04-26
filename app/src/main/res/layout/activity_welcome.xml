@@ -1,28 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/picture_dimension"
+        android:src="@drawable/family2"
+        />
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_below="@id/picture"
+        android:layout_marginTop="@dimen/twenty"
+        android:textStyle="bold"
+        android:textSize="@dimen/fortyLetter"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/occupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginRight="@dimen/marginRight"
+        android:layout_marginTop="@dimen/marginTop"
+        android:textSize="@dimen/twentyLetter"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twentyMarginTop"
+        android:layout_marginLeft="@dimen/tenMarginLeft"
+        android:layout_marginRight="@dimen/tenMarginRight"
+        android:lineSpacingExtra="@dimen/twentySpacing"
+        android:textSize="@dimen/fifteenLetter"
+        android:layout_below="@id/occupation"  />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginTop="@dimen/tenMarginTop"
+        android:textSize="@dimen/twentyLetter"
+        android:layout_toEndOf="@id/occupation"/>
 
     <Button
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Back"
+        android:layout_marginTop="@dimen/tenMarginTop"
         android:onClick="onBackClick"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/name"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

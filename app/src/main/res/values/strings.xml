@@ -12,4 +12,6 @@
     <string name="validEmail">Please add a valid email</string>
     <string name="noBirthdate">Please select your birthdate</string>
     <string name="Back">Back</string>
+    <string name="Description">Description</string>
+    <string name="Occupation">Occupation</string>
 </resources>

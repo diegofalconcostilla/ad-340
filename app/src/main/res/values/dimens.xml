@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="firsttextview_toppadding">150dp</dimen>
+    <dimen name="picture_dimension">300dp</dimen>
+    <dimen name="twenty">20dp</dimen>
+    <dimen name="fortyLetter">40sp</dimen>
+    <dimen name="marginRight">10dp</dimen>
+    <dimen name="marginTop">10dp</dimen>
+    <dimen name="twentyMarginTop">20dp</dimen>
+    <dimen name="tenMarginLeft">10dp</dimen>
+    <dimen name="tenMarginRight">10dp</dimen>
+    <dimen name="twentySpacing">20dp</dimen>
+    <dimen name="fifteenLetter">15sp</dimen>
+    <dimen name="tenMarginTop">10dp</dimen>
+    <dimen name="twentyLetter">20sp</dimen>
 </resources>
