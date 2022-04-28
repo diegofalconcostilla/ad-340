@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements
     public static final String nameKey = "name";
     public static final String occupationKey = "occupation";
     public static final String descriptionKey = "description";
+    public static final String usernameKey = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements
         intent.putExtra(descriptionKey, temporalDescription);
         intent.putExtra(occupationKey, temporalOccupation);
         intent.putExtra(ageKey, age);
+        intent.putExtra(usernameKey, temporalUsername);
         startActivity(intent);
     }
 

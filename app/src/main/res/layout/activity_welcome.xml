@@ -1,65 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".WelcomeActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/picture"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/picture_dimension"
-        android:src="@drawable/family2"
-        />
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/picture"
-        android:layout_marginTop="@dimen/twenty"
-        android:textStyle="bold"
-        android:textSize="@dimen/fortyLetter"
-        android:layout_centerInParent="true"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/occupation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/name"
-        android:layout_marginRight="@dimen/marginRight"
-        android:layout_marginTop="@dimen/marginTop"
-        android:textSize="@dimen/twentyLetter"
-        android:layout_centerInParent="true"/>
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/twentyMarginTop"
-        android:layout_marginLeft="@dimen/tenMarginLeft"
-        android:layout_marginRight="@dimen/tenMarginRight"
-        android:lineSpacingExtra="@dimen/twentySpacing"
-        android:textSize="@dimen/fifteenLetter"
-        android:layout_below="@id/occupation"  />
+        <FrameLayout
+            android:id="@+id/content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/age"
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navDrawer"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/name"
-        android:layout_marginTop="@dimen/tenMarginTop"
-        android:textSize="@dimen/twentyLetter"
-        android:layout_toEndOf="@id/occupation"/>
-
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Back"
-        android:layout_marginTop="@dimen/tenMarginTop"
-        android:onClick="onBackClick"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"/>
-
-</RelativeLayout>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        app:menu="@menu/drawer_view" />
+</androidx.drawerlayout.widget.DrawerLayout>

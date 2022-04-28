@@ -14,4 +14,11 @@
     <string name="Back">Back</string>
     <string name="Description">Description</string>
     <string name="Occupation">Occupation</string>
+    <string name="Profile">Profile</string>
+    <string name="Matches">Matches</string>
+    <string name="Settings">Settings</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="matches_description">This is where matches will go</string>
+    <string name="settings_description">This is where settings will go</string>
 </resources>
