@@ -31,6 +31,5 @@ public class WelcomeActivityTest {
     public void succesfulNavigationToMatches(){
         onView(withContentDescription("Open navigation drawer")).perform(click());
         onView(withId(R.id.matches_menu_item)).perform(click());
-        onView(withId(R.id.matchesTextView)).check(matches(withText("This is where matches will go")));
     }
 }

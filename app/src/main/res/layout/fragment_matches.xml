@@ -3,12 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MatchesFragment">
 
-    <TextView
-        android:id="@+id/matchesTextView"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/matches_description" />
+        android:layout_marginTop="@dimen/FiftySixDPMarginTop"
+        android:background="@color/white"
+        android:paddingStart="@dimen/TenDpPaddingStart"
+        android:paddingEnd="@dimen/TenDPPaddingEnd"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>

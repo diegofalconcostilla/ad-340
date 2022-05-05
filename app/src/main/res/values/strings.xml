@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Hello World</string>
     <string name="textview_second">Falcon, Diego 4/19/2022</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
@@ -21,4 +21,10 @@
     <string name="drawer_close">Close navigation drawer</string>
     <string name="matches_description">This is where matches will go</string>
     <string name="settings_description">This is where settings will go</string>
+    <string name="secondary_text">Secondary Text</string>
+    <string name="title">Title</string>
+    <string name="matchedImage">This is the matched image</string>
+    <string name="random_person">random person</string>
+    <string name="random_person_2">random person 2</string>
+    <string name="liked_message">You liked: %s</string>
 </resources>
