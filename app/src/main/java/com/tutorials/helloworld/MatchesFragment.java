@@ -22,9 +22,9 @@ public class MatchesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_matches, container, false);
 
         List<Matches> matchesList = new ArrayList<>();
-        matchesList.add(new Matches("Test 1", "Test person 1", false, "https://i.imgur.com/kobQVOD.jpg"));
-        matchesList.add(new Matches("Test 2", "Test person 2", true, "https://i.imgur.com/fF3Iiih.jpg"));
-        matchesList.add(new Matches("Test 3", "Test person 3", false, "https://i.imgur.com/z4OKVlA.jpg"));
+        matchesList.add(new Matches("Dog Capone", "Beware of the Boss", false, R.drawable.dog_capone));
+        matchesList.add(new Matches("Lazy Frankie", "Men in Black Holidays", true, R.drawable.lazy_frankie));
+        matchesList.add(new Matches("Space Cat", "Purring in the moon", false, R.drawable.space_cat));
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);

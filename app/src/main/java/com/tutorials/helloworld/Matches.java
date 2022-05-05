@@ -1,13 +1,15 @@
 package com.tutorials.helloworld;
 
 
+import android.graphics.drawable.Drawable;
+
 public class Matches {
     private String name;
     private String description;
     private boolean liked;
-    private String imageUrl;
+    private int imageUrl;
 
-    public Matches(String name, String description, boolean liked, String imageUrl) {
+    public Matches(String name, String description, boolean liked, int imageUrl) {
         this.name = name;
         this.description = description;
         this.liked = liked;
@@ -38,11 +40,11 @@ public class Matches {
         this.liked = liked;
     }
 
-    public String getImageUrl() {
+    public int getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public void setImageUrl(int imageUrl) {
         this.imageUrl = imageUrl;
     }
 }

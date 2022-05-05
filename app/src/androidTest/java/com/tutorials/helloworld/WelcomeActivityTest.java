@@ -35,6 +35,10 @@ public class WelcomeActivityTest {
         onView(withId(R.id.matches_menu_item)).perform(click());
 
         onView(withRecyclerView(R.id.recycler_view).atPosition(0))
-                .check(matches(hasDescendant(withText("Test 1"))));
+                .check(matches(hasDescendant(withText("Dog Capone"))));
+        onView(withRecyclerView(R.id.recycler_view).atPosition(1))
+                .check(matches(hasDescendant(withText("Lazy Frankie"))));
+        onView(withRecyclerView(R.id.recycler_view).atPosition(2))
+                .check(matches(hasDescendant(withText("Space Cat"))));
     }
 }
