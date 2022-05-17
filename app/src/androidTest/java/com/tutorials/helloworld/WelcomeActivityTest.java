@@ -4,6 +4,7 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -34,11 +35,9 @@ public class WelcomeActivityTest {
         onView(withContentDescription("Open navigation drawer")).perform(click());
         onView(withId(R.id.matches_menu_item)).perform(click());
 
+        onView(isRoot()).perform(HelpersViewMatcher.waitView(withText("Hayden the Wrestler"), 5000));
+
         onView(withRecyclerView(R.id.recycler_view).atPosition(0))
-                .check(matches(hasDescendant(withText("Dog Capone"))));
-        onView(withRecyclerView(R.id.recycler_view).atPosition(1))
-                .check(matches(hasDescendant(withText("Lazy Frankie"))));
-        onView(withRecyclerView(R.id.recycler_view).atPosition(2))
-                .check(matches(hasDescendant(withText("Space Cat"))));
+                .check(matches(hasDescendant(withText("Hayden the Wrestler"))));
     }
 }
