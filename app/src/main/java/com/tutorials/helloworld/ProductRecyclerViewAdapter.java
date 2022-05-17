@@ -11,12 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class  ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductCardViewHolder> {
     private List<Matches> matchesList;
+    private Consumer<Matches> onClickCallback;
 
-    ProductRecyclerViewAdapter(List<Matches> matchesList) {
+    ProductRecyclerViewAdapter(List<Matches> matchesList, Consumer<Matches> onClickCallback) {
         this.matchesList = matchesList;
+        this.onClickCallback = onClickCallback;
     }
 
     @NonNull
@@ -31,12 +34,17 @@ public class  ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductCar
         if (matchesList != null && position < matchesList.size()) {
             Matches match = matchesList.get(position);
             holder.matchesName.setText(match.getName());
-            holder.matchesDescription.setText(match.getDescription());
             Picasso.get().load(match.getImageUrl()).into(holder.matchesImage);
+            if(match.isLiked()){
+                holder.likeButton.setImageResource(R.drawable.heart_icon_filled);
+            } else {
+                holder.likeButton.setImageResource(R.drawable.heart_icon);
+            }
             holder.likeButton.setOnClickListener((v) -> {
                 Toast.makeText(v.getContext(),
                         String.format(v.getContext().getString(R.string.liked_message),
                                 match.getName()), Toast.LENGTH_LONG).show();
+                onClickCallback.accept(match);
             });
         }
     }

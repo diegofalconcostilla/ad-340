@@ -1,19 +1,16 @@
 package com.tutorials.helloworld;
 
 
-import android.graphics.drawable.Drawable;
-
 public class Matches {
     private String name;
-    private String description;
     private boolean liked;
-    private int imageUrl;
+    private String imageUrl;
+    private String uid;
+    private String lat;
+    private String longitude;
 
-    public Matches(String name, String description, boolean liked, int imageUrl) {
-        this.name = name;
-        this.description = description;
-        this.liked = liked;
-        this.imageUrl = imageUrl;
+    public Matches() {
+        //Default Constructor
     }
 
     public String getName() {
@@ -24,14 +21,6 @@ public class Matches {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public boolean isLiked() {
         return liked;
     }
@@ -40,11 +29,35 @@ public class Matches {
         this.liked = liked;
     }
 
-    public int getImageUrl() {
+    public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(int imageUrl) {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }
