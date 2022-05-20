@@ -27,4 +27,23 @@
     <string name="random_person">random person</string>
     <string name="random_person_2">random person 2</string>
     <string name="liked_message">You liked: %s</string>
+    <string name="pick_your_reminder_time">Pick your reminder time</string>
+    <string name="select_time">Select Time</string>
+    <string name="timeSelected">Selected Time</string>
+    <string name="setmaxdistance">Set Max Distance</string>
+    <string name="distanceInMiles">Type distance in miles</string>
+    <string name="selectGenderPreference">Select your gender preference</string>
+    <string name="he_him">He/Him</string>
+    <string name="sheHer">She/Her</string>
+    <string name="she_Her">She/Her</string>
+    <string name="they_them">They/Them</string>
+    <string name="noAnswer">No answer</string>
+    <string name="select_your_privacy_status">Select your privacy status</string>
+    <string name="privateValue">Private</string>
+    <string name="publicValue">Public</string>
+    <string name="interestedAgeRange">Interested Age Range</string>
+    <string name="save">Save</string>
+    <string name="invalidSettings">Settings are Invalid</string>
+    <string name="selectTimeMessage">Selected Time: %d:%s</string>
+    <string name="selectReminderTime">Select Reminder Time</string>
 </resources>

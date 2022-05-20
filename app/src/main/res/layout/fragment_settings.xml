@@ -1,14 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SettingsFragment">
 
     <TextView
-        android:id="@+id/settingsTextView"
+        android:id="@+id/matchesTimeLabel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/settings_description" />
+        android:layout_height="wrap_content"
+        android:text="@string/pick_your_reminder_time" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/selectTimeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_time"
+        android:layout_below="@+id/matchesTimeLabel"/>
+
+    <TextView
+        android:id="@+id/selected_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/timeSelected"
+        android:layout_below="@+id/selectTimeButton" />
+
+    <TextView
+        android:id="@+id/searchMilesLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setmaxdistance"
+        android:layout_below="@+id/selected_time" />
+
+    <EditText
+        android:id="@+id/editDistance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/distanceInMiles"
+        android:layout_below="@+id/searchMilesLabel"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/genderLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/selectGenderPreference"
+        android:layout_below="@+id/editDistance" />
+
+    <RadioGroup
+        android:id="@+id/genderRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/genderLabel">
+
+        <RadioButton android:id="@+id/radioHeHim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/he_him" />
+
+        <RadioButton android:id="@+id/radioSheHer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/she_Her" />
+
+        <RadioButton android:id="@+id/radioTheyThem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/they_them" />
+
+        <RadioButton android:id="@+id/radioNoAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/noAnswer" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/privacyOptionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_your_privacy_status"
+        android:layout_below="@+id/genderRadioGroup" />
+
+    <RadioGroup
+        android:id="@+id/accountPrivacySetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/privacyOptionLabel">
+
+        <RadioButton android:id="@+id/radioPrivate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privateValue" />
+
+        <RadioButton android:id="@+id/radioPublic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/publicValue" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/ageRangeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/interestedAgeRange"
+        android:layout_below="@+id/accountPrivacySetting" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/ageSlider"
+        android:valueFrom="18"
+        android:valueTo="100"
+        android:stepSize="1"
+        app:values="@array/initialValues"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/ageRangeLabel"/>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_below="@+id/ageSlider" />
+
+</RelativeLayout>

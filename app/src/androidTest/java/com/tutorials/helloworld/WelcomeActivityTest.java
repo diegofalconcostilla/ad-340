@@ -24,13 +24,6 @@ public class WelcomeActivityTest {
             = new ActivityScenarioRule<>(WelcomeActivity.class);
 
     @Test
-    public void succesfulNavigationToSettings(){
-        onView(withContentDescription("Open navigation drawer")).perform(click());
-        onView(withId(R.id.settings_menu_item)).perform(click());
-        onView(withId(R.id.settingsTextView)).check(matches(withText("This is where settings will go")));
-    }
-
-    @Test
     public void succesfulNavigationToMatches(){
         onView(withContentDescription("Open navigation drawer")).perform(click());
         onView(withId(R.id.matches_menu_item)).perform(click());
@@ -39,5 +32,14 @@ public class WelcomeActivityTest {
 
         onView(withRecyclerView(R.id.recycler_view).atPosition(0))
                 .check(matches(hasDescendant(withText("Hayden the Wrestler"))));
+    }
+
+    @Test
+    public void clickingOnSettingsDrawerItemDisplaysSettingsFragment() {
+        onView(withContentDescription("Open navigation drawer")).perform(click());
+        onView(withId(R.id.settings_menu_item)).perform(click());
+
+        onView(withId(R.id.matchesTimeLabel)).check(
+                matches(withText("Pick your reminder time")));
     }
 }
