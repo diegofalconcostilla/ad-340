@@ -8,16 +8,12 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.location.LocationProvider;
-import android.location.provider.ProviderProperties;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -39,10 +35,12 @@ public class MatchesFragment extends Fragment {
     private ProductRecyclerViewAdapter adapter;
     private SettingsViewModel settingsViewModel;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_matches, container, false);
+        List<Matches> matchesList = new ArrayList<>();
 
         locationManager = (LocationManager) view.getContext().getSystemService(Context.LOCATION_SERVICE);
         settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
@@ -70,7 +68,6 @@ public class MatchesFragment extends Fragment {
         vm.clear();
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
@@ -78,7 +75,7 @@ public class MatchesFragment extends Fragment {
     }
 
     private boolean checkLocation() {
-        if(!isLocationEnabled()) {
+        if (!isLocationEnabled()) {
             showAlert();
         }
         return isLocationEnabled();
@@ -101,15 +98,14 @@ public class MatchesFragment extends Fragment {
     }
 
     public void toggleLocationUpdates() {
-        if(!checkLocation()) {
+        if (!checkLocation()) {
             return;
         }
 
-        if(isGettingLocationUpdates) {
+        if (isGettingLocationUpdates) {
             locationManager.removeUpdates(locationListenerNetwork);
             isGettingLocationUpdates = false;
-        }
-        else {
+        } else {
             if (ActivityCompat.checkSelfPermission(requireContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
                     ActivityCompat.checkSelfPermission(requireContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
@@ -151,12 +147,15 @@ public class MatchesFragment extends Fragment {
         }
 
         @Override
-        public void onStatusChanged(String s, int i, Bundle bundle) {}
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+        }
 
         @Override
-        public void onProviderEnabled(String s) {}
+        public void onProviderEnabled(String s) {
+        }
 
         @Override
-        public void onProviderDisabled(String s) {}
+        public void onProviderDisabled(String s) {
+        }
     };
 }
