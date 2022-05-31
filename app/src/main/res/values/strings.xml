@@ -46,4 +46,9 @@
     <string name="invalidSettings">Settings are Invalid</string>
     <string name="selectTimeMessage">Selected Time: %d:%s</string>
     <string name="selectReminderTime">Select Reminder Time</string>
+    <string name="enable_location">Enable Location</string>
+    <string name="location_message">Please turn on our location services to use this feature</string>
+    <string name="location_settings">Location Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="started_location_updates">Started Location Updates</string>
 </resources>

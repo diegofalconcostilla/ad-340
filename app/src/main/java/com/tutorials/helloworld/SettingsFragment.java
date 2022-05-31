@@ -110,7 +110,7 @@ public class SettingsFragment extends Fragment {
             updatedTime = newSettings.getMatchReminderTime();
             int selectedHour = Integer.parseInt(updatedTime.substring(0, updatedTime.indexOf(':')));
             String realMinute = updatedTime.substring(updatedTime.indexOf(':') + 1);
-            selectedTime.setText(String.format(requireContext().getString(R.string.timeSelected),
+            selectedTime.setText(String.format(requireContext().getString(R.string.selectTimeMessage),
                     selectedHour, realMinute));
 
             maxDistance.setText(newSettings.getMaxDistance());
