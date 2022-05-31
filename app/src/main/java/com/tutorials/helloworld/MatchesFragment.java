@@ -40,7 +40,7 @@ public class MatchesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_matches, container, false);
-        List<Matches> matchesList = new ArrayList<>();
+
 
         locationManager = (LocationManager) view.getContext().getSystemService(Context.LOCATION_SERVICE);
         settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
@@ -147,15 +147,12 @@ public class MatchesFragment extends Fragment {
         }
 
         @Override
-        public void onStatusChanged(String s, int i, Bundle bundle) {
-        }
+        public void onStatusChanged(String s, int i, Bundle bundle) {}
 
         @Override
-        public void onProviderEnabled(String s) {
-        }
+        public void onProviderEnabled(String s) {}
 
         @Override
-        public void onProviderDisabled(String s) {
-        }
+        public void onProviderDisabled(String s) {}
     };
 }

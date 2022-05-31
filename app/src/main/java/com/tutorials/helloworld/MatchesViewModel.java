@@ -27,6 +27,7 @@ public class MatchesViewModel {
                             item.setUid(todoSnapshot.getId());
                             matches.add(item);
                         }
+
                         ArrayList<Matches> filteredMatches = new ArrayList<>();
                         for (Matches match : matches) {
                             Location targetLocation = new Location("");
